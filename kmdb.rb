@@ -69,19 +69,71 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-Use `Model.destroy_all` code.
+
 # TODO!
+ Studio.destroy_all
+ Movie.destroy_all
+ Actor.destroy_all
+ Role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
 
-rails generate model Studio
-rails generate model Movie
-rails generate model Actor
-rails generate model Role
+#rails generate model Studio
+#rails generate model Movie
+#rails generate model Actor
+#rails generate model Role
+
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+puts "There are #{Studio.all.count} studios"
+
+new_studio = Studio.new
+#puts new_studio.inspect
+new_studio["name"] = "Warner Bros."
+
+new_studio.save
+puts "There are #{Studio.all.count} studios"
+
+puts "There are #{Studio.all.count} studios"
+puts "There are #{Movie.all.count} movies"
+
+warner_bros = Studio.find_by({ "name" => "Warner Bros." })
+
+new_movie = Movie.new
+#puts new_movie.inspect
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = "2005"
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = warner_bros["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight"
+new_movie["year_released"] = "2008"
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = warner_bros["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight Rises"
+new_movie["year_released"] = "2012"
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = warner_bros["id"]
+new_movie.save
+
+puts "There are #{Movie.all.count} movies"
+
+#--------- Batman Begins
+
+new_actor = Actor.new
+puts new_actor.inspect
+new_actor["name"] = "Warner Bros."
+
+
+
 
 # Prints a header for the movies output
 puts "Movies"
@@ -90,6 +142,8 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+
 
 # Prints a header for the cast output
 puts ""
