@@ -98,7 +98,7 @@ puts "There are #{Movie.all.count} movies"
 
 warner_bros = Studio.find_by({ "name" => "Warner Bros." })
 
-puts warner_bros.inspect 
+#puts warner_bros.inspect 
 
 new_movie = Movie.new
 #puts new_movie.inspect
@@ -124,6 +124,7 @@ new_movie.save
 
 puts "There are #{Movie.all.count} movies"
 
+puts "There are #{Actor.all.count} actors"
 
 new_actor = Actor.new
 #puts new_actor.inspect
@@ -174,8 +175,7 @@ puts "There are #{Actor.all.count} actors"
 
 #--------- Batman Begins
 
-puts "There are #{Movie.all.count} movies"
-puts "There are #{Actor.all.count} actors"
+
 puts "There are #{Role.all.count} roles"
 
 batman_begins = Movie.find_by({"title" => "Batman Begins"})
@@ -190,7 +190,6 @@ new_role["character_name"] = "Bruce Wayne"
 new_role.save
 
 michael_caine = Actor.find_by({"name" => "Michael Caine"})
-#puts michael_caine.inspect
 
 new_role = Role.new
 new_role["movie_id"] = batman_begins["id"]
@@ -215,7 +214,6 @@ new_role["character_name"] = "Rachel Dawes"
 new_role.save
 
 gary_oldman = Actor.find_by({"name" => "Gary Oldman"})
-
 
 new_role = Role.new
 new_role["movie_id"] = batman_begins["id"]
