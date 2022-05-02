@@ -323,7 +323,8 @@ for movie in movies
     # read the name  from the studio row
     studio_name = studio["name"]
     
-    # read the title, year_released, rated, column from the movie row
+    # read the title, year_released, rated columns from the movie row
+    
     title = movie["title"]
 
     year_released = movie["year_released"]
@@ -342,3 +343,31 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+
+
+roles = Role.all
+for role in roles
+  
+    # read the title column from the movie row
+    #title = movie["title"]
+    
+    
+    # query to find the movie for this role
+    movie = Movie.find_by({"id" => role["movie_id"]})
+    
+    #read the title from the movie row
+    movie_title =movie["title"]
+
+    # query to find the actor for this role
+    actor = Actor.find_by({"id" => role["actor_id"]})
+    
+    #read the name from the actor row
+    actor =  actor["name"]
+    
+    #read the character_name column from the role row
+    character_name = role["character_name"]
+
+    # display 
+    puts "#{movie_title} #{actor} - #{character_name}"
+  end
