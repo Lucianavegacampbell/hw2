@@ -173,8 +173,7 @@ new_actor.save
 
 puts "There are #{Actor.all.count} actors"
 
-#--------- Batman Begins
-
+#--------- Batman Begins---------------------------
 
 puts "There are #{Role.all.count} roles"
 
@@ -221,7 +220,7 @@ new_role["actor_id"] = gary_oldman ["id"]
 new_role["character_name"] = "Commissioner Gordon"
 new_role.save
 
-##--------The Dark Knight
+##--------The Dark Knight-------------------------------------
 
 the_Dark_Knight = Movie.find_by({"title" => "The Dark Knight"})
 
@@ -262,7 +261,7 @@ new_role["character_name"] = "Rachel Dawes"
 new_role.save
 
 
-#-------The Dark Knight Rises
+#-------The Dark Knight Rises-----------------------------------------
 
 the_Dark_Knight_Rises = Movie.find_by({"title" => "The Dark Knight Rises"})
 
